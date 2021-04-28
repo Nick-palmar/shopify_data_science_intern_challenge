@@ -37,15 +37,18 @@ def extract_time(df: pd.DataFrame, col_name: str = 'created_at', drop: bool = Tr
         A new dataframe containing new column with separate information about date and time
     """
     df = df.copy()
+
+    datetime_col = pd.to_datetime(df[col_name])
+    print(type(datetime_col))
     
     # extract date info 
-    df['day'] = df[col_name].dt.day
-    df['month'] = df[col_name].month
-    df['year'] = df[col_name].year
-    df['weekday'] = df[col_name].weekday()
+    df['day'] = datetime_col.dt.day
+    df['month'] = datetime_col.dt.month
+    df['year'] = datetime_col.dt.year
+    df['weekday'] = datetime_col.dt.dayofweek
 
     # extract time info; ignore the seconds (different in seconds sholud not matter for orders)
-    df['hours_time'] = df[col_name].hour + (df[col_name].minute / 60)
+    df['hours_time'] = datetime_col.dt.hour + (datetime_col.dt.minute / 60)
 
     if drop:
         df.drop(columns=[col_name], inplace=True)
