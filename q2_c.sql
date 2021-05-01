@@ -15,14 +15,13 @@
 --      to get access to the product names. 
 
 -- Now that I have orders with associated productIds, productNames and quantities for German customers, I can group and order the data to solve the problem.
--- Since I am looking for most popular products, I know I must group the current result-set by productId's so that everyhting is in terms of products.
+-- Since I am looking for most popular products, I know I must group the current result-set by productId's so that everything is in terms of products.
 
 -- Now, I can order the products by the total quantity (which would be the sums of the individual qunaities). By ordering the total quantities
 --      In a descending manner, I can have the most ordered product on top of the final query result. 
 
--- Since each productId corresponds with a single ProductName, I can select the product name (without any interference from the grouup by clause)
+-- Since each productId corresponds with a single ProductName, I can select the product name (without any interference from the group by clause)
 
--- Evidently, Germans like Boston Crab Meat (160 Orders, max)!
 
 SELECT p.ProductName, SUM(od.quantity) AS TotalGermanCustomerOrders
 FROM Customers c
@@ -34,4 +33,6 @@ JOIN OrderDetails od
 JOIN Products p
 	ON p.ProductId = od.ProductId
 GROUP BY p.ProductId
-ORDER BY SUM(od.quantity) DESC
+ORDER BY SUM(od.quantity) DESC;
+
+-- Answer: Boston Crab Meat 

@@ -17,7 +17,7 @@ WHERE s.ShipperId = 1
 -- each order has a shipperId associated with it
 
 -- Assuming that each record in the order table is a distinct order 
---      (which they are; I checked) I can join the order table through the foreign 'ShipperId' key.
+--      I can join the order table through the foreign 'ShipperId' key.
 --      This gives me a temporary result set containing all orders with shipper Id info
 
 -- Since I only want to get speedy express shipments, I reduce the result set to ShipperId's of 1 
@@ -31,5 +31,5 @@ JOIN Orders o
 	ON s.ShipperId = o.ShipperId
 WHERE s.ShipperId = 1
 
--- answer: 54 orders shipped
+-- Answer: 54 orders 
         

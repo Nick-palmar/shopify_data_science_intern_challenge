@@ -1,5 +1,3 @@
--- employee with most orders (lname)
-
 -- Starting with the employee table, there are EmployeeId and LastNm for 10 employees  
 -- Now, looking at the order table, there is a EmployeeId foreign key for each order record
 
@@ -16,12 +14,11 @@
 
 -- Finally, to get the last name I just need to select the lastname from the employee table
 
-SELECT e.LastName
+SELECT e.LastName, COUNT(*) AS NumOrders
 FROM Employees e
 JOIN Orders o
 	ON e.EmployeeId = o.EmployeeId
 GROUP BY e.EmployeeId
-ORDER BY COUNT(*) DESC
-LIMIT 1;
+ORDER BY COUNT(*) DESC;
 
--- answer: Peacock
+-- Answer: Peacock
