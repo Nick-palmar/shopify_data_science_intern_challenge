@@ -12,6 +12,8 @@ ___
 
 
 **code** folder (Same as above except code files)
+- Note: Please use **q1_shopify.pdf** for question 1 since the Jupyter notebook may not load 
+
 1. *q1.ipynb*: Response to question 1 (a-c) using an unsupervised machine learning algorithm (Isolation Forest), data visualization techniques, and statistics
 2. *q2_a.sql*: Query and explanation for 2a
 3. *q2_b.sql*: Query and explanation for 2b
