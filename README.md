@@ -1,8 +1,13 @@
 # Shopify Data Science Intern Challenge
 
-These are my solutions for the shopify data science intern challenge
+### Please Access My Solutions in the **pdf_answers** folder
+
+----------------------------------------------------------------
 
 ## Files 
+
+---
+
 
 **pdf_answers** folder (Simple Access)
 1. *q1_shopify.pdf*: Pdf version of Jupyter notebook for question 1 (a-c) 
